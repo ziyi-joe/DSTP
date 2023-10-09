@@ -14,12 +14,9 @@
 ## Compilation
 
 ```bash
-mkdir catkin_DSTP && cd catkin_DSTP
+mkdir DSTP_ws && cd DSTP_ws
 git clone https://github.com/ziyi-joe/DSTP
-mv DSTP src
 catkin_make -DCMAKE_BUILD_TYPE=Release
 source devel/setup.bash
-roslaunch DSTP_planner
-
-
-
+roslaunch dstp_planner car_map.launch
+roslaunch dstp_planner car_motion.launch
