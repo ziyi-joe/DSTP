@@ -1,0 +1,22 @@
+<launch>
+    <include file = "$(find turtlebot3_fake)/launch/turtlebot3_fake.launch">
+         <arg name="origin_x_"  value="3"/>
+        <arg name="origin_y_"   value="3"/>
+        <arg name="origin_yaw_" value="0"/> 
+    </include>
+
+    <node pkg ="path_searching" name ="hybrid_a" type ="global_path_generator" output = "screen">
+        <rosparam file="$(find dstp_planner)/config/trajectory_optimization.yaml" command="load" />
+        <param name="flag_using_lidar_localization_" value="false"/>
+    </node>
+
+    <node pkg ="dstp_planner" name ="DSTP_node" type ="rpg_planner_node" output = "screen">
+        <rosparam file="$(find dstp_planner)/config/trajectory_optimization.yaml" command="load" />
+        <param name="robot_type"  value="car"/>
+        <param name="flag_using_lidar_localization_" value="false"/>     
+    </node>
+
+    <!-- <node pkg ="dstp_planner" name ="controller" type ="controller_node" output = "screen" /> -->
+    
+</launch>
+

@@ -1,0 +1,8 @@
+image: huahong_0.5.pgm
+#resolution: 0.05
+resolution: 0.5
+origin:  [0, 0, 0] #[-2, -2, 0] #[-3.2, -3.2, 0] #[-1.6, -2, 0]
+occupied_thresh: 0.3
+free_thresh: 0.12 # Taken from the Willow Garage map in the turtlebot_navigation package
+negate: 0
+mode: scale

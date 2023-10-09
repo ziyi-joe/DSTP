@@ -1,0 +1,6 @@
+image: xian_map2.pgm
+resolution: 0.05
+origin: [-25, -18.5, 0]
+occupied_thresh: 0.65
+free_thresh: 0.196 # Taken from the Willow Garage map in the turtlebot_navigation package
+negate: 0

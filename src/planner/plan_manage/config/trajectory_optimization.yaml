@@ -1,0 +1,12 @@
+#Planning Param：
+MaxKappa: 1.0
+
+MinVel: -3.0
+MaxVel: 3.0
+
+MaxAcc: 2.0
+
+SafeRadius: 0.45
+FrontWheel: 0.2
+
+MinimalTurningRadius: 1.0

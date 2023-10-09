@@ -1,0 +1,4 @@
+std_msgs/Float64MultiArray v
+std_msgs/Float64MultiArray a
+std_msgs/Float64MultiArray kappa
+std_msgs/Float64MultiArray t

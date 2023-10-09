@@ -1,0 +1,4 @@
+<launch>
+    
+    <node name="test" pkg="path_searching" type="test" output="screen"/>
+</launch>

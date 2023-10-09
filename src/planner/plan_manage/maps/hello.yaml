@@ -1,0 +1,12 @@
+image: hello.pgm
+resolution: 1
+origin: [0 , 0, 0]
+occupied_thresh: 0.3
+free_thresh: 0.1
+negate: 0
+map_min_lon: 120.12
+map_min_lat: 30.2652
+map_max_lon: 120.121
+map_max_lat: 30.2662
+
+

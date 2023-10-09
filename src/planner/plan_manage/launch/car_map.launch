@@ -1,0 +1,27 @@
+<launch>
+    <!-- swarm topic transmitter bridge-->
+    <!-- <include file="$(find swarm_bridge)/launch/bridge_udp.launch">
+        <arg name="drone_id" value="999"/>
+        <arg name="broadcast_ip" value="127.0.0.255"/>
+    </include> -->
+
+    <param name="robot_description" textfile="$(find hunter_se_description)/urdf/hunter_se_description.urdf" />
+    <include file="$(find hunter_se_description)/launch/display.launch">
+    </include>
+
+    <!-- map -->
+    <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(find rpg_planner)/maps/basement.yaml" /> -->
+    <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(find rpg_planner)/maps/map.yaml"/> -->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find dstp_planner)/maps/map_parking3.yaml"/>
+    <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(find rpg_planner)/maps/blank_map_1000x1000.yaml"/> -->
+    <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(find rpg_planner)/maps/map_maze_com.yaml"/> -->
+    <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(find rpg_planner)/maps/xian_map.yaml"/> -->
+    <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(find rpg_planner)/maps/s_bend_big_2.yaml"/> -->
+   
+
+
+    <node pkg="tf" type="static_transform_publisher" name="word_map_static_broadcaster" args="0 0 0 0 0 0 map world 100" /> 
+    <node pkg="tf" type="static_transform_publisher" name="map_odom_static_broadcaster" args="0 0 0 0 0 0 map odom 100" /> 
+    <node pkg="tf" type="static_transform_publisher" name="BaseLink_BaseFootprint_static_broadcaster" args="0 0 0 0 0 0 base_footprint base_link 100" /> 
+    <node name="rviz_nav" pkg="rviz" type="rviz" args="-d $(find dstp_planner)/launch/include/car.rviz" required="true" />
+</launch>
